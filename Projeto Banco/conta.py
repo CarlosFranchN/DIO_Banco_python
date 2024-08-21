@@ -1,13 +1,17 @@
 class Conta:
-    def __init__(self, nome: str, saldo: int | float):
-        self.nome = nome
-        self.saldo = saldo
+    def __init__(self, agencia:str,id : int, cliente: object):
+        self.agencia = agencia
+        self.id = id
+        self.cliente = cliente
+        self.saldo = 0 
         self.historico = []
         self.saques_diarios = 3
         self.limite_max = 500
 
     def info(self):
-        print(f"Nome usuario: {self.nome}")
+        print(f"Agencia : {self.agencia}")
+        print(f"Numero da conta: {self.id}")
+        print(f"Nome usuario: {self.cliente.nome}")
         print(f"Saldo : R$ {self.saldo:.2f}")
 
     def deposito(self, valor):
@@ -60,12 +64,4 @@ class Conta:
             case _:
                 print("Operação invalida")
 
-# conta1 = Conta("Carlos Franch", 700)
-# conta1.deposito(700)
-# conta1.deposito(120)
-# conta1.saque(480)
-# conta1.saque(60)
-# conta1.saque(60)
-# print(conta1.saque(480))
 
-# conta1.extrato()
